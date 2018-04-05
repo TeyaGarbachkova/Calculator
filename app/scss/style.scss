@@ -29,6 +29,7 @@ h1 {
 }
 
 .calculator {
+  position: relative;
   font-size: 28px;
   margin: 0 auto;
   width: 10em;
@@ -52,14 +53,16 @@ h1 {
 }
 
 .viewer {
-  color: #c97874;
-  float: left;
-  line-height: 3em;
+  color: #fff;
+  line-height: 1em;
   text-align: right;
   text-overflow: ellipsis;
   overflow: hidden;
-  width: 7.5em;
-  height: 3em;
+  width: 11em;
+  padding: 10px 0;
+  margin: 0.5em;
+  background: rgba(16, 10, 28, .28);
+;
 }
 
 button {
@@ -220,9 +223,24 @@ button {
     width: 12em;
   }
   .viewer {
-    width: 8.5em;
+    width: 11em;
   }
   button {
     margin: 0.5em;
   }
+}
+
+.invisible {
+  opacity: 0;
+}
+
+#num-null {
+  width: 5em;
+}
+
+#equals {
+  height: 5em;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
