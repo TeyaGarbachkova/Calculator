@@ -2,7 +2,8 @@
     "use strict"
 
     // Variables
-    var screen = document.querySelector('#viewer'),
+    var screen = document.querySelector('.display-num'), // Display numbers
+        screenResult = document.querySelector('.display'),
         equals = document.querySelector('#equals'),
         elem = document.querySelectorAll('.num'), // List of numbers
         elem1 = document.querySelectorAll('.ops'), // List of operators
@@ -19,8 +20,11 @@
     for(var i = 0, len = elem.length; i < len; i++ ) {
         elem[i].onclick = function() {
             var num = this.getAttribute("data-num");
-            output = screen.innerHTML += num;
-            result = output;
+            output = num;
+            //output = screen.innerHTML + num;
+            //console.log(output);
+            result = screen.innerHTML += num;
+            screenResult.innerHTML = output;
             limit = output.length;
             if(limit > 16 ) {
                 alert("Sorry no more input is allowed");
@@ -50,33 +54,38 @@
 
     equals.onclick = function() {
         if(screen.innerHTML === result) {
-            screen.innerHTML = eval(result);
+            screenResult.innerHTML = eval(result);
         }
         else {
-            screen.innerHTML = "";
+            screenResult.innerHTML = "";
         }
     };
 
     clear.onclick = function() {
         screen.innerHTML = "";
+        screenResult.innerHTML = "";
     };
 
     delLast.onclick = function() {
-        if (screen.innerHTML !== "") {
-            screen.innerHTML = output.slice(0, -1);
+        if (screenResult.innerHTML !== "") {
+            screenResult.innerHTML = output.slice(0, -1);
         }
     };
 
     for(var i = 0, len1 = elem1.length; i < len1; i++ ) {
         elem1[i].onclick = function() {
             operator = this.getAttribute("data-ops");
+            this.setAttribute("clicked", "true");
             if(screen.innerHTML === "") {
                 screen.innerHTML = screen.innerHTML.concat("");
             }
             else if(result) {
-                result = output.concat(operator);
+                result = result.concat(operator);
                 screen.innerHTML = result;
+                screenResult.innerHTML = output;
+                console.log(output);
             }
+
         };
     }
 }());
