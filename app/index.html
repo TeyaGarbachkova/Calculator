@@ -14,10 +14,11 @@
 
 
 <main role="main">
-    <h1>Calculator</h1>
-    <section id="calculator" class="calculator">
+    <section>
+        <h1 class="title">Calculator</h1>
+        <div id="calculator" class="calculator">
             <div id="viewer" class="viewer"></div>
-            <button id="del-last" class="del-last"><--</button>
+            <button id="del-last" class="del-last">&larr;</button>
             <button id="clear" class="clear">AC</button>
             <button data-ops="/" class="ops">/</button>
             <button data-ops="*" class="ops">*</button>
@@ -39,11 +40,9 @@
 
             <button class="num-null" data-num="0">0</button>
             <button class="period" data-num=".">.</button>
-
             <button id="equals" class="equals" data-result="">=</button>
-
+        </div>
     </section>
-    <button id="reset" class="reset">Reset Universe?</button>
 </main>
 
 <!--g-->
