@@ -39,7 +39,7 @@ p {
   text-overflow: ellipsis;
   overflow: hidden;
   width: 11em;
-  height: 3em;
+  height: 2.5em;
   padding: 10px 0;
   margin: 0.5em;
   border: 2px solid #3597d8;
@@ -155,4 +155,15 @@ button {
 
 .del-last:hover {
   background: #e60000;
+}
+
+.display-num {
+  color: #999999;
+  font-size: 16px;
+}
+
+.warming {
+  font-size: 16px;
+  color: #e60000;
+  margin: 0 1em;
 }
