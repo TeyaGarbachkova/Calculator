@@ -4,46 +4,8 @@ body {
   font: 300 18px/1.6 "Source Sans Pro",sans-serif;
 }
 
-.title{
-  margin: 1em;
-  color: #fff;
-  text-align: center;
-}
-
 p {
   margin: 0;
-}
-.calculator {
-  position: relative;
-  font-size: 28px;
-  background: #fff;
-  border-radius: 2%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin: 0 auto;
-  width: 10em;
-
-  &::before,
-  &::after {
-    content: " ";
-    display: table;
-  }
-
-  &::after {
-    clear: both;
-  }
-}
-
-.viewer {
-  color: #3597d8;
-  text-align: right;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  width: 11em;
-  height: 2.5em;
-  padding: 10px 0;
-  margin: 0.5em;
-  border: 2px solid #3597d8;
-  border-radius: 10px;
 }
 
 button {
@@ -51,7 +13,6 @@ button {
   background: rgba(53,151,216,1);
   color: #fff;
   cursor: pointer;
-  float: left;
   font: inherit;
   margin: 0.25em;
   width: 2em;
@@ -86,29 +47,77 @@ button {
   }
 }
 
+.title{
+  margin: 1em;
+  color: #fff;
+  text-align: center;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.calculator {
+  position: relative;
+  font-size: 28px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 0 auto;
+  width: 11em;
+  padding-top: 0.1em;
+}
+
+.viewer {
+  color: #3597d8;
+  text-align: right;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 2.5em;
+  padding: 10px 0;
+  margin: 0.5em;
+  border: 2px solid #3597d8;
+  border-radius: 10px;
+}
+
 .ops {
   background: #7ebde7;
 }
 
 .num-null {
-  width: 5em;
+  width: 4.8em;
 }
 
-/* Same as above, modified for operators */
-//.ops:focus::after {
-//  content: attr(data-ops);
-//  margin-left: -210px;
-//  width: 420px;
-//}
+.equals {
+  height: 4.5em;
+  position: absolute;
+  bottom: 0;
+  right: 0.2em;
 
-.equals:hover {
-  background: #17a928;
+  &:hover {
+    background: #17a928;
+  }
+
+  &:focus::after {
+    content: attr(data-result);
+    margin-left: -300px;
+    width: 600px;
+  }
 }
-/* Same as above, modified for result */
-.equals:focus::after {
-  content: attr(data-result);
-  margin-left: -300px;
-  width: 600px;
+
+.del-last:hover {
+  background: #e60000;
+}
+
+.display-num {
+  color: #999999;
+  font-size: 16px;
+}
+
+.warming {
+  font-size: 16px;
+  color: #e60000;
+  margin: 0 1em;
 }
 
 
@@ -131,39 +140,19 @@ button {
 }
 
 @media (min-width: 420px) {
-  .calculator {
-    width: 12em;
-  }
-  .viewer {
-    width: 11em;
-  }
   button {
     margin: 0.5em;
   }
-}
 
-.invisible {
-  opacity: 0;
-}
+  .calculator {
+    width: 13em;
+  }
 
-#equals {
-  height: 5em;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
+  .equals {
+    height: 5em;
+  }
 
-.del-last:hover {
-  background: #e60000;
-}
-
-.display-num {
-  color: #999999;
-  font-size: 16px;
-}
-
-.warming {
-  font-size: 16px;
-  color: #e60000;
-  margin: 0 1em;
+  .num-null {
+    width: 5.2em;
+  }
 }

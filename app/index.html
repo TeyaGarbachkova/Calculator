@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <title>Calculator</title>
 
     <!-- CSS-->
     <link href="css/style.css" rel="stylesheet">
@@ -13,17 +14,17 @@
 <body>
 
 
-<main role="main">
+<main>
     <section>
         <h1 class="title">Calculator</h1>
-        <div id="calculator" class="calculator">
-            <div id="viewer" class="viewer">
+        <div class="calculator">
+            <div class="viewer">
                 <p class="display-num"></p>
                 <p class="display"></p>
             </div>
             <p class="warming"></p>
-            <button id="del-last" class="del-last">&larr;</button>
-            <button id="clear" class="clear">AC</button>
+            <button class="del-last">&larr;</button>
+            <button class="clear">AC</button>
             <button data-ops="/" class="ops">/</button>
             <button data-ops="*" class="ops">*</button>
 
@@ -42,14 +43,14 @@
             <button class="num" data-num="3">3</button>
             <button class="invisible">N</button>
 
-            <button class="num-null" data-num="0">0</button>
+            <button class="num-null num" data-num="0">0</button>
             <button class="period" data-num=".">.</button>
-            <button id="equals" class="equals" data-result="">=</button>
+            <button class="equals" data-result="">=</button>
         </div>
     </section>
 </main>
 
-<!--g-->
+<!--js-->
 <script src="js/main.js"></script>
 
 </body>
